@@ -107,26 +107,23 @@ section {
   margin-bottom: 1.5rem;
 }
 
-#calidad {
-  text-align: center;
-}
-
 #calidad h2 {
   text-align: center;
   margin-bottom: .5rem;
 }
 
 #calidad ul {
-  display: inline-block;
-  vertical-align: top;
-  width: 32%;
   padding: 1rem;
   list-style-type: none;
-  text-align: left;
   background-color: #e5f1de;
 }
 
+#calidad ul li::before {
+    content: "🐾";
+    margin-right: 10px;
+}
 
 footer {
   background-color: #a2e67e;
+  text-align: center;
 }
