@@ -44,13 +44,14 @@ a {
 }
 
 .menu a:hover {
-  color: aquamarine;
+  color: #6bd731;
 }
 
 main {
   flex: 1;
   max-width: 900px;
   margin: 0 auto;
+  padding: 1rem;
 }
 
 section {
@@ -58,7 +59,7 @@ section {
 }
 
 #hero {
-  background-color: #effde7;
+  background-color: #e5f1de;
   padding: 1rem;
   text-align: center;
   border-radius: 1.5rem;
@@ -90,10 +91,15 @@ section {
   margin-bottom: .5rem;
 }
 
+#servicios div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0 0.3rem;
+}
+
 .card {
-  display: inline-block;
   padding: 1rem;
-  width: 32%;
+  width: 30%;
   background-color: #e5f1de;
 }
 
