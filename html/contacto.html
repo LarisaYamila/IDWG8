@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="/css/contacto.css">
+</head>
+<body>
+
+     <header>
+            <div>
+                <h1>Veterinaria La Mary</h1>
+                <p>Consentidos, sanos y felices</p>
+            </div>
+             <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Institucional.html">Institucional</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    <form action="#" method="POST">
+        <h2>Contacto</h2>
+        
+        
+        <div class="form-group">
+            <label for="motivo">Motivo de contacto:</label>
+            <select id="motivo" name="motivo" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="baño">Baño de mascotas</option>
+                <option value="consultas">Consultas</option>
+                <option value="exoticos">Animales exóticos</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tipo_mascota">Tipo de mascotas:</label>
+            <input type="text" id="tipo_mascota" name="tipo_mascota" placeholder="Ej: Perro, Gato, Reptil..." required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="comentarios">Comentarios:</label>
+            <textarea id="comentarios" name="comentarios" rows="4" required></textarea>
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
