@@ -1,134 +1,297 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>título de veterinaria</title>
 
-        <link rel="stylesheet" href="css/inicio.css">
-    </head>
-    
-    <body>
-        <header>
-            <div class="logo">
-                <h1>Veterinaria La Mary</h1>
-                <p>Consentidos, sanos y felices</p>
-            </div>
-             <nav class="menu">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="Institucional.html">Institucional</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Veterinaria La Mary</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="index.html">🐾 La Mary</a>
+
+            <!-- Botón hamburguesa -->
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="institucional.html">Institucional</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+
                 </ul>
-            </nav>
-        </header>
-    
-        <main>
-            <!-- Contenido de contacto-->
-            <section id="hero">
-                <h2> Servicios veterinarios en Concordia  </h2>
-
-                 <p>
-                   Porque cada momento cuenta: atención profesional, internación segura y el confort de la consulta domiciliaria.
-                 </p>
-
-            <a href="contacto.html">Solicitar turno</a>
-            
-
-           <!--<div class="hero-contenido ">
-                <h2> Que nos hace diferentes</h2>
-
-                <ul>
-                    <li>Guardia e Internación 24 horas del día</li>
-                    <li>Laboratorio y Diagnósticos</li>
-                    <li>Cirguías 24 horas del día</li>
-                    <li>Vacunación y Desparasitación</li>
-                    <li>Consultas y Control de salud</li>
-                    <li>Farmacia y Petshop</li>
-                </ul>
-
-            </div> -->
-
-            <div class="imagen"
-            >
-           <img src="./images/banner.jpg" class="imagen" width="350" height="200" alt="Veterinaria La Mary">
-            </div>
 
             </div>
 
-            </section>
+        </div>
+    </nav>
 
-            <!-- Contenido de servicios-->
-            <section class="servicios">
-                <h2> Nuestros servicios </h2>
-            
-                <div>
-                    <article class="card">
-                        <h3>Consultas</h3>
-                        <p>Consultas médicas veterinarias</p>
-                    </article>
 
-                    <article class="card">
-                        <h3>Vacunación</h3>
-                        <p> Vacunaciones para perros y gatos</p>
-                    </article>
+    <header>
 
-                    <article class="card">
-                        <h3>Cirugías </h3>
-                        <p> Cirugías veterinarias programadas y de emergencia</p>
-                    </article>
+        <div class="logo">
+            <h1>Veterinaria La Mary</h1>
+            <p>Consentidos, sanos y felices</p>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- Hero -->
+        <section id="hero">
+
+            <h2>Servicios veterinarios en Concordia</h2>
+
+            <p>
+                Porque cada momento cuenta: atención profesional,
+                internación segura y el confort de la consulta domiciliaria.
+            </p>
+
+            <a href="institucional.html">Elegir profesional</a>
+
+
+            <div class="imagen">
+
+                <div
+                    id="carouselVeterinaria"
+                    class="carousel carousel-dark slide">
+
+                    <!-- Indicadores -->
+                    <div class="carousel-indicators">
+
+                        <button
+                            type="button"
+                            data-bs-target="#carouselVeterinaria"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Slide 1">
+                        </button>
+
+                        <button
+                            type="button"
+                            data-bs-target="#carouselVeterinaria"
+                            data-bs-slide-to="1"
+                            aria-label="Slide 2">
+                        </button>
+
+                        <button
+                            type="button"
+                            data-bs-target="#carouselVeterinaria"
+                            data-bs-slide-to="2"
+                            aria-label="Slide 3">
+                        </button>
+
+                    </div>
+
+
+                    <!-- Imágenes del carrusel -->
+                    <div class="carousel-inner">
+
+                        <div
+                            class="carousel-item active"
+                            data-bs-interval="10000">
+
+                            <img
+                                src="./images/banner.png"
+                                class="d-block imagen-carousel"
+                                alt="Veterinaria La Mary">
+
+                        </div>
+
+
+                        <div
+                            class="carousel-item"
+                            data-bs-interval="2000">
+
+                            <img
+                                src="./images/banner 2.png"
+                                class="d-block imagen-carousel"
+                                alt="Servicios veterinarios">
+
+                        </div>
+
+
+                        <div class="carousel-item">
+
+                            <img
+                                src="./images/banner 4.png"
+                                class="d-block imagen-carousel"
+                                alt="Atención veterinaria">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Botón anterior -->
+                    <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselVeterinaria"
+                        data-bs-slide="prev">
+
+                        <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true">
+                        </span>
+
+                        <span class="visually-hidden">Previous</span>
+
+                    </button>
+
+
+                    <!-- Botón siguiente -->
+                    <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselVeterinaria"
+                        data-bs-slide="next">
+
+                        <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true">
+                        </span>
+
+                        <span class="visually-hidden">Next</span>
+
+                    </button>
 
                 </div>
-            
-            </section>
 
-                
-            <section class="diferencias">
-                <h2> Que nos hace diferentes</h2>
+            </div>
 
-                     Servicios 
-                <ul>
-                    <li>Guardia e Internación 24 horas del día</li>
-                    <li>Laboratorio y Diagnósticos</li>
-                    <li>Cirguías 24 horas del día</li>
-                    <li>Vacunación y Desparasitación</li>
-                    <li>Consultas y Control de salud</li>
-                    <li>Farmacia y Petshop</li>
-                </ul>
-            </section> 
+        </section>
 
-            
-            <section class="horarios">
-                <h2> Horarios de atención</h2>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td> Lunes a Viernes</td>
-                            <td> 7:00 a 13:00</td>
-                            <td> 17:00 a 21:00</td>
-                        </tr>
 
-                        <tr>
-                            <td> Sábados</td>
-                            <td> 8:00 a 14:00</td>  
-                            <td> 17:00 a 20:00</td>    
-                        </tr>
+        <!-- Oferta -->
+        <div class="bg-white text-black overflow-hidden py-2">
 
-                        <tr>
-                            <td> Domingos y Feriados</td>
-                            <td> 9:30 a 12:30</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+            <div class="oferta">
+                🐾 OFERTA ESPECIAL - BAÑO Y PELUQUERÍA PARA TU MASCOTA -
+                CONSULTAS VETERINARIAS 🐾
+                🐾 OFERTA ESPECIAL - BAÑO Y PELUQUERÍA PARA TU MASCOTA -
+                CONSULTAS VETERINARIAS 🐾
+            </div>
 
-        </main>
-   
-   <footer>
-     <p>Veterinaria La Mary - Av. San Martín 1247, Concordia, Entre Rios</p>
-     <p> Trabajo Final Integrador - Introducción al Desarrollo Web 2026</p>
-   </footer>
-  
-    
-    </body>
+        </div>
+
+
+        <!-- Servicios -->
+        <section class="servicios">
+
+            <h2>Nuestros servicios</h2>
+
+            <div>
+
+                <article class="card">
+                    <h3>Consultas</h3>
+                    <p>Consultas médicas veterinarias</p>
+                </article>
+
+                <article class="card">
+                    <h3>Vacunación</h3>
+                    <p>Vacunaciones para perros y gatos</p>
+                </article>
+
+                <article class="card">
+                    <h3>Cirugías</h3>
+                    <p>
+                        Cirugías veterinarias programadas
+                        y de emergencia
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Horarios -->
+        <section class="horarios">
+
+            <h2>Horarios de atención</h2>
+
+            <table>
+
+                <tbody>
+
+                    <tr>
+                        <td>Lunes a Viernes</td>
+                        <td>7:00 a 13:00</td>
+                        <td>17:00 a 21:00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Sábados</td>
+                        <td>8:00 a 14:00</td>
+                        <td>17:00 a 20:00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Domingos y Feriados</td>
+                        <td>9:30 a 12:30</td>
+                        <td></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Veterinaria La Mary - Av. San Martín 1247,
+            Concordia, Entre Ríos
+        </p>
+
+        <p>
+            Trabajo Final Integrador -
+            Introducción al Desarrollo Web 2026
+        </p>
+
+    </footer>
+
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
 </html>
