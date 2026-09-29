@@ -1,21 +1,20 @@
-/* Selector universal */
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+@import url("reset.css");
+@import url("node_modules/bootstrap/dist/css/bootstrap.min.css");
 
 @font-face {
-    font-family: "SuperBasic";
-    src: url("../assets/fonts/SuperBasic.ttf");
+    font-family: "Montserrat";
+    src: url("./../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
     font-weight: normal;
     font-style: normal;
 }
 
-/*reglas para los links*/
-a {
-    text-decoration: none;
-    color: #ffffff;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+
+  background-color: whitesmoke;
+  font-family: "Montserrat", sans-serif;
 }
 
 /*estilo header*/
@@ -26,16 +25,9 @@ header {
     background-color: #1b4332;
     padding: 1rem 3rem;
     color:#f4f8f6;
-
 }
 
-body {
-    font-family:"SuperBasic";
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #ffffff;
-}
+
 .logo h1 {
     margin-bottom: 0.5rem;
 }
@@ -58,9 +50,22 @@ body {
 .menu a:hover{
     color: #46978f;
 }
+
 main {
     max-width: 900px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    flex: 1 1 auto;
+}
+
+/*reglas para los links*/
+a {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 #hero {
@@ -115,6 +120,20 @@ main {
     margin-bottom: 1rem;
 }
 
+.oferta {
+    width: 100%;
+    overflow: hidden;
+    color: rgb(0, 0, 0);
+    padding: 8px 0;
+    white-space: nowrap; 
+}
+
+.oferta {
+    display: inline-block;
+    white-space: nowrap;
+    animation: correr 10s linear infinite;
+}
+
 h2 {
     font-size: 1.5rem;
 }
@@ -159,12 +178,7 @@ header,footer{
     flex-shrink: 1;
     flex-basis: auto;
 }
-main {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    flex:1,1,auto;
-}
+
 .logo{
     display: flex;
     flex-direction: column;
@@ -206,23 +220,27 @@ main {
 .horarios tr:hover {
     background-color: #f0eaa3;
 }
+
 .imagen {
   width: 100%;
-  max-width: px;
   height: auto;
   object-fit: cover;
   border-radius: 16px; /* Bordes redondeados prolijos */
   align-self: flex-start; /* Centrar la imagen horizontalmente */
 }
 
-
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#carouselVeterinaria {
+     width: 100%;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 15px;
 }
 
+.imagen-carousel {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
 
 @media (max-width: 480px) {
     header {
@@ -286,20 +304,6 @@ main{
 }
 
 
-.oferta {
-    width: 100%;
-    overflow: hidden;
-    color: rgb(0, 0, 0);
-    padding: 8px 0;
-    white-space: nowrap; 
-}
-
-.oferta {
-    display: inline-block;
-    white-space: nowrap;
-    animation: correr 10s linear infinite;
-}
-
 @keyframes correr {
     from {
         transform: translateX(100vw);
@@ -309,18 +313,6 @@ main{
     }
 }
 
-#carouselVeterinaria {
-     width: 100%;
-    height: 300px;
-    object-fit: contain;
-    border-radius: 15px;
-}
-
-.imagen-carousel {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-}
 /* -------------------------------------------- */
 /* =========================
    RESPONSIVE PARA CELULAR
