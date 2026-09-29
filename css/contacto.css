@@ -27,3 +27,22 @@ textarea {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
+@media (min-width: 481px) {
+    /* modificaciones para tablet */
+
+    header {
+        justify-content: center;
+    }
+
+    .logo {
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) {
+    
+    form {
+        width: 500px;
+    }
+}

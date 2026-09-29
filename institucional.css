@@ -32,3 +32,25 @@
   color: #59be23;
   font-weight: 500;
 }
+
+@media (min-width: 481px) {
+    /* modificaciones para tablet */
+
+    header {
+        justify-content: center;
+    }
+
+    .logo {
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) {
+    /* modificaciones para PC */
+    
+    #profesionales {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+}
