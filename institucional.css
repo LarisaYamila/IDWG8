@@ -1,15 +1,15 @@
 @import url("css/inicio.css");
 
-
 #profesionales {
-    display: flex;
+    display: flex; 
+    flex-direction: column;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
     gap: 30px;
 }
 
 #profesionales article {
-    width: 250px;
+    width: 350px;
     padding: 20px;
     text-align: center;
     border: 1px solid #ccc;
