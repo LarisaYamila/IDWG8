@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="institucional.css">
+  <title>Veterinaria La Mary - Institucional</title>
+</head>
+
+<body>
+  <!-- Componente de boostrap -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="index.html">🐾 La Mary</a>
+
+      <!-- Botón hamburguesa -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Inicio</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="institucional.html">Institucional</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pacientes.html">Pacientes</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+
+  <header>
+
+    <div class="logo">
+      <h1>Veterinaria La Mary</h1>
+      <p>Especialistas en su bienestar y felicidad.</p>
+    </div>
+
+  </header>
+
+  <main>
+    <section class="container py-2">
+      <article class="col-12 bg-body-secondary rounded-4 p-4 mb-2">
+        <form class="d-flex flex-column gap-3" id="form-animales">
+          <h3 class="fs-4 fw-semibold">NUEVO INGRESO</h3>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="nombreDuenio" class="form-label">Dueño</label>
+              <input type="text" name="nombreDuenio" id="nombreDuenio" class="form-control" maxlength="25" required>
+            </div>
+
+            <div class="col-md-6">
+              <label for="tipoAnimal" class="form-label">Tipo de animal</label>
+              <select name="tipoAnimal" id="tipoAnimal" class="form-select" required>
+                <option value="" selected disabled>Seleccione un tipo de animal</option>
+
+                <optgroup label="Animales de Granja">
+                  <option value="vaca">Vaca / Toro</option>
+                  <option value="caballo">Caballo / Yegua</option>
+                  <option value="oveja">Oveja / Corderito</option>
+                  <option value="cabra">Cabra / Chivo</option>
+                  <option value="cerdo">Cerdo</option>
+                  <option value="gallina">Gallina / Gallo</option>
+                  <option value="pato">Pato</option>
+                  <option value="pavo">Pavo</option>
+                  <option value="asno">Asno / Burro</option>
+                  <option value="conejo_granja">Conejo de granja</option>
+                </optgroup>
+
+                <optgroup label="Mascotas de Compañía">
+                  <option value="perro">Perro</option>
+                  <option value="gato">Gato</option>
+                  <option value="ave_domestica">Ave doméstica</option>
+                  <option value="roedor">Roedor</option>
+                  <option value="otro">Otro</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label for="nombreAnimal" class="form-label">
+                Nombre <span class="text-muted fw-light">(Opcional)</span>
+              </label>
+              <input type="text" name="nombreAnimal" id="nombreAnimal" class="form-control">
+            </div>
+
+            <div class="col-md-6">
+              <label for="color" class="form-label">Color</label>
+              <input type="text" name="color" id="color" class="form-control" maxlength="10" required>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label" for="edad">Edad</label>
+              <input class="form-control" type="number" name="edad" id="edad" min="0" max="30" required>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label" for="peso">Peso en kg</label>
+              <input class="form-control" type="number" name="peso" id="peso" min="0" step="any"
+                placeholder="Ejemplo 4.5" required>
+            </div>
+
+            <div class="col-md-12 col-lg-6">
+              <label for="esterilizado" class="form-label">Esterilizado</label>
+              <select name="esterilizado" id="esterilizado" class="form-select" required>
+                <option value="" selected disabled>Seleccione una opción</option>
+                <option value="Si">Sí</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-12 mt-4 text-center">
+            <button id="botonAgregarMascota" class="btn btn-formulario" type="submit">Agregar Animal</button>
+          </div>
+        </form>
+        <!-- <div>
+              <label class="form-label" for="imagenMascota">Imagen de la Mascota</label>
+              <input class="form-control" type="file" name="imagenMascota" id="imagenMascota" accept=".png,.jpg,.jpeg"  required>
+            </div> -->
+      </article>
+      <article class="col-12 bg-body-secondary rounded-4 p-4">
+        <span class="badge rounded-pill fw-semibold badge-mascotas">ANIMALES</span>
+        <div class="d-flex justify-content-between">
+          <h2 class="fs-3 fw-semibold mt-2">
+            REGISTRO DE ANIMALES
+          </h2>
+          <span class="badge text-bg-secondary align-middle fs-5 align-self-center" id="total">
+            0
+          </span>
+        </div>
+
+        <div class="table-responsive-md">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Dueño</th>
+                <th>Tipo de Animal</th>
+                <th>Nombre</th>
+                <th>Color</th>
+                <th>Edad</th>
+                <th>Peso</th>
+                <th>Esterilizado</th>
+                <!-- <th>Imagen</th> -->
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="listado-animales">
+
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+  </main>
+
+
+  <footer>
+    <p>Veterinaria La Mary - Av. San Martín 1247, Concordia, Entre Rios</p>
+    <p> Trabajo Final Integrador - Introducción al Desarrollo Web 2026</p>
+  </footer>
+
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./pacientes.js" defer></script>
+</body>
+
+</html>

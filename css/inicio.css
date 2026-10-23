@@ -53,7 +53,8 @@ header {
 }
 
 main {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1320px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -77,11 +78,6 @@ a {
     border-radius: 10px;
 }
 
-#hero a:hover {
-    background-color: #c3b6b6;
-    color: #075d54;
-}
-
 #hero h2 {
     margin-bottom: 1rem;
     color: #073e3e;
@@ -99,6 +95,11 @@ a {
     color: #caeae7;
     border-radius: 10px;
     margin-bottom: 1rem;
+}
+
+#hero a:hover {
+    background-color: #c3b6b6;
+    color: #075d54;
 }
 
 .oferta {
@@ -215,6 +216,21 @@ footer {
     height: auto;
     border-radius: 15px;
 }
+
+.badge-mascotas {
+    background-color: #478776;
+}
+
+.btn-formulario {
+    background-color: #0f5742;
+    color: #caeae7;
+}
+
+#hero a:hover {
+    background-color: #c3b6b6;
+    color: #075d54;
+}
+
 
 @keyframes correr {
     from {
