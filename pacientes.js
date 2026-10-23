@@ -24,11 +24,12 @@ const dialogEditarAnimalHTML = document.getElementById(ID_DIALOG_EDITAR_ANIMAL);
 const dialogEliminarAnimalHTML = document.getElementById(ID_DIALOG_ELIMINAR_ANIMAL);
 const botonConfirmarEliminarHTML = document.getElementById(ID_BOTON_CONFIRMAR_ELIMINAR);
 
-//Arrays
 let listaDeAnimales = [];
-
-//Variables
 let idAnimalEliminar = null;
+
+//Funciones flecha
+const asignarIDAnimalEliminar = (idAnimal) => { idAnimalEliminar = idAnimal }
+const renderizarTotalAnimales = () => { totalAnimalesHTML.textContent = listaDeAnimales.length }
 
 //Funciones
 function cargarListaDeAnimales() {
@@ -64,13 +65,13 @@ function renderListaDeAnimales() {
 
                 <td>
                 <button commandfor="dialogEditarAnimal" command="show-modal" class="btn-outline theme-secondary btn-icon" onclick="cargarFormEditarAnimal('${animal.idAnimal}')"><i class="bi bi-pencil-square"></i></button>
-                <button commandfor="dialogEliminarAnimal" command="show-modal" class="btn-subtle theme-warning btn-icon" onclick="${(() => {idAnimalEliminar = animal.idAnimal})()}"><i class="bi bi-trash"></i></button>
+                <button commandfor="dialogEliminarAnimal" command="show-modal" class="btn-subtle theme-warning btn-icon" onclick="${asignarIDAnimalEliminar(animal.idAnimal)}"><i class="bi bi-trash"></i></button>
                 </td>
             </tr>
         `
     });
 
-    totalAnimalesHTML.textContent = listaDeAnimales.length;
+    renderizarTotalAnimales()
 };
 
 function crearObjetoAnimal(nuevoAnimal) {
@@ -96,7 +97,7 @@ function eliminarAnimal(idAnimal) {
         filaAHTML.remove();
         listaDeAnimales = listaDeAnimales.filter(animal => animal.idAnimal !== idAnimal)
         guardarListaDeAnimales()
-        totalAnimalesHTML.textContent = listaDeAnimales.length;
+        renderizarTotalAnimales()
     }
 }
 
@@ -205,18 +206,21 @@ formEditarAnimalesHTML.addEventListener('submit', (evento) => {
     //cerrar dialog editar animal
     dialogEditarAnimalHTML.close();
 
-    //limpiar en formulario para la proxima carga
-    formAnimalesHTML.reset();
+    //limpiar formulario 
+    formEditarAnimalesHTML.reset();
 })
 
 botonConfirmarEliminarHTML.addEventListener("click", () => {
     if (idAnimalEliminar == null) {
+        //cerrar dialog eliminar animal
         dialogEliminarAnimalHTML.close()
         return
     }
-    
+
     eliminarAnimal(idAnimalEliminar);
-    idAnimalEliminar == null
+    asignarIDAnimalEliminar(null);
+
+    //cerrar dialog eliminar animal
     dialogEliminarAnimalHTML.close()
 });
 
