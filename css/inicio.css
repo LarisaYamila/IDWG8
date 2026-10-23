@@ -1,5 +1,6 @@
-@import url("reset.css");
-@import url("node_modules/bootstrap/dist/css/bootstrap.min.css");
+@import "../reset.css";
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
 
 @font-face {
     font-family: "Montserrat";

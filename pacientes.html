@@ -106,7 +106,7 @@
 
             <div class="col-md-6">
               <label for="color" class="form-label">Color</label>
-              <input type="text" name="color" id="color" class="form-control" maxlength="10" required>
+              <input type="text" name="color" id="color" class="form-control" maxlength="12" required>
             </div>
 
             <div class="col-md-6">
@@ -172,6 +172,118 @@
         </div>
       </article>
     </section>
+
+    <dialog class="p-0 border-0 rounded-4 shadow bg-body text-body overflow-hidden" id="dialogEditarAnimal"
+      style="max-width: 600px; width: 100%;">
+
+      <div class="d-flex align-items-center justify-content-between p-3 bg-body-tertiary border-bottom">
+        <h5 class="modal-title fs-5 m-0">
+          <i class="bi bi-pencil-square me-2"></i>Editar Animal
+        </h5>
+        <button type="button" class="btn-close" commandfor="dialogEditarAnimal" command="close" aria-label="Close"></button>
+      </div>
+
+      <div class="p-4">
+        <form id="form-editar-animal">
+          <input type="hidden" name="idAnimal">
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="editarNombreDuenio" class="form-label">Dueño</label>
+              <input type="text" name="nombreDuenio" id="editarNombreDuenio" class="form-control" maxlength="25"
+                required>
+            </div>
+
+            <div class="col-md-6">
+              <label for="editarTipoAnimal" class="form-label">Tipo de animal</label>
+              <select name="tipoAnimal" id="editarTipoAnimal" class="form-select" required>
+                <option value="" disabled>Seleccione un tipo de animal</option>
+                <optgroup label="Animales de Granja">
+                  <option value="vaca">Vaca / Toro</option>
+                  <option value="caballo">Caballo / Yegua</option>
+                  <option value="oveja">Oveja / Corderito</option>
+                  <option value="cabra">Cabra / Chivo</option>
+                  <option value="cerdo">Cerdo</option>
+                  <option value="gallina">Gallina / Gallo</option>
+                  <option value="pato">Pato</option>
+                  <option value="pavo">Pavo</option>
+                  <option value="asno">Asno / Burro</option>
+                  <option value="conejo_granja">Conejo de granja</option>
+                </optgroup>
+                <optgroup label="Mascotas de Compañía">
+                  <option value="perro">Perro</option>
+                  <option value="gato">Gato</option>
+                  <option value="ave_domestica">Ave doméstica</option>
+                  <option value="roedor">Roedor</option>
+                  <option value="otro">Otro</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label for="editarNombreAnimal" class="form-label">Nombre <span
+                  class="text-muted fw-light">(Opcional)</span></label>
+              <input type="text" name="nombreAnimal" id="editarNombreAnimal" class="form-control">
+            </div>
+
+            <div class="col-md-6">
+              <label for="editarColor" class="form-label">Color</label>
+              <input type="text" name="color" id="editarColor" class="form-control" maxlength="10" required>
+            </div>
+
+            <div class="col-md-6">
+              <label for="editarEsterilizado" class="form-label">Esterilizado</label>
+              <select name="esterilizado" id="editarEsterilizado" class="form-select" required>
+                <option value="Si">Sí</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label" for="editarEdad">Edad</label>
+              <input class="form-control" type="number" name="edad" id="editartEdad" min="0" max="30" required>
+            </div>
+
+            <div class="col-md-12">
+              <label class="form-label" for="editarPeso">Peso en kg</label>
+              <input class="form-control" type="number" name="peso" id="editarPeso" min="0" step="any" required>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-end gap-2 mt-4 pt-3 border-top">
+            <button type="button" class="btn btn-secondary" commandfor="dialogEditarAnimal" command="close">
+              Cancelar
+            </button>
+            <button type="submit" class="btn btn-success">
+              <i class="bi bi-check-lg me-1"></i>Guardar Cambios
+            </button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+
+    <dialog class="p-0 border-0 rounded-4 shadow bg-body text-body overflow-hidden" id="dialogEliminarAnimal"
+      style="max-width: 400px; width: 100%;">
+      <div class="p-4 text-center">
+        <div class="mb-3 text-danger fs-1">
+          <i class="bi bi-exclamation-triangle-fill"></i>
+        </div>
+
+        <h5 class="mb-2">¿Estás seguro?</h5>
+        <p class="text-muted mb-4">Esta acción eliminará el registro del animal de forma permanente.</p>
+
+        <input type="hidden" id="deleteIdFila">
+
+        <div class="d-flex justify-content-center gap-2">
+          <button type="button" class="btn btn-secondary px-4" commandfor="dialogEliminarAnimal" command="close">
+            Cancelar
+          </button>
+          <button type="button" class="btn btn-danger px-4" id="btnConfirmarEliminar">
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </dialog>
   </main>
 
 
