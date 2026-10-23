@@ -1,21 +1,20 @@
-/* Selector universal */
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+@import url("reset.css");
+@import url("node_modules/bootstrap/dist/css/bootstrap.min.css");
 
 @font-face {
-    font-family: "SuperBasic";
-    src: url("../assets/fonts/SuperBasic.ttf");
+    font-family: "Montserrat";
+    src: url("./../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
     font-weight: normal;
     font-style: normal;
 }
 
-/*reglas para los links*/
-a {
-    text-decoration: none;
-    color: #ffffff;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+
+    background-color: whitesmoke;
+    font-family: "Montserrat", sans-serif;
 }
 
 /*estilo header*/
@@ -25,85 +24,72 @@ header {
     justify-content: space-between;
     background-color: #1b4332;
     padding: 1rem 3rem;
-    color:#f4f8f6;
-
+    color: #f4f8f6;
 }
 
-body {
-    font-family:"SuperBasic";
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #ffffff;
-}
 .logo h1 {
     margin-bottom: 0.5rem;
 }
+
 .logo p {
     margin-bottom: 1rem;
+}
 
-}
 .menu {
-    width:fit-content;
+    width: fit-content;
 }
-.menu ul{
+
+.menu ul {
     list-style: none;
 }
 
-.menu li{
-    display:inline-block;
+.menu li {
+    display: inline-block;
     margin-right: 1rem;
 }
 
-.menu a:hover{
+.menu a:hover {
     color: #46978f;
 }
+
 main {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+}
+
+/*reglas para los links*/
+a {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 #hero {
     flex: 0 0 50%;
-    background-color: #bdbebe;
-    padding: 2rem;
-    margin: 1rem;
+    /* background-color: #ecffee; */
+    padding: 1rem;
+    margin: 1rem 0;
     text-align: center;
     border-radius: 10px;
 }
-/*.hero-contenido h2{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2%;
-    color:#073e3e;
-    flex: 1;
-    text-align: right; 
-}*/
-/*.hero-contenido ul{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    color:#003624;
-    list-style: none;
-    text-align: right;
-}*/
 
-
-
-
-#hero a:hover{
+#hero a:hover {
     background-color: #c3b6b6;
     color: #075d54;
 }
 
-#hero h2{
+#hero h2 {
     margin-bottom: 1rem;
-    color:#073e3e;
+    color: #073e3e;
 }
 
-#hero p{
+#hero p {
     margin-bottom: 1rem;
-    color:#003624;
+    color: #003624;
 }
 
 #hero a {
@@ -115,75 +101,83 @@ main {
     margin-bottom: 1rem;
 }
 
+.oferta {
+    width: 100%;
+    overflow: hidden;
+    color: rgb(0, 0, 0);
+    white-space: nowrap;
+}
+
+.oferta {
+    display: inline-block;
+    white-space: nowrap;
+    animation: correr 10s linear infinite;
+}
+
 h2 {
     font-size: 1.5rem;
 }
-h3{
+
+h3 {
     font-size: 1.3rem;
 }
+
 .servicios {
     background-color: #225550;
     padding: 2rem;
-    margin: 1rem;
+    margin: 1rem 0;
     text-align: center;
     border-radius: 10px;
+    width: 100%;
 }
-.servicios h2{
+
+.servicios h2 {
     margin-bottom: 1rem;
     color: #edf2f1;
 }
+
 .servicios div {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.card{
+
+.card {
     background-color: #478776;
     color: #ebe9e9;
     padding: 1rem;
-    margin: 1rem;
+    margin: 1rem 0;
     border-radius: 20px;
-    width: 200px;
+    width: 300px;
 }
 
 footer {
-    
     background-color: #0f5742;
     color: #caeae7;
     text-align: center;
     padding: 1rem;
 }
 
-header,footer{
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-}
-main {
+.logo {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
-    flex:1,1,auto;
+    justify-content: space-between;
 }
-.logo{
-    display: flex;
-    flex-direction: column;
-    justify-content:space-between;
-}
--------------
 
-.horarios{
-    background-color: #bfcfce;
+.horarios {
+    background-color: #478776;
     padding: 2rem;
-    margin: 1rem;
+    margin: 1rem 0;
     border-radius: 10px;
     text-align: center;
 }
+
 .horarios h2 {
     margin-bottom: 1rem;
     color: #00251b;
     text-align: center;
 }
+
 .horarios table {
     width: 100%;
     border-collapse: collapse;
@@ -191,7 +185,9 @@ main {
     border-radius: 8px;
     overflow: hidden;
 }
-.horarios th, .horarios td {
+
+.horarios th,
+.horarios td {
     padding: 0.8rem;
     border-bottom: 1px solid #caeae7;
     color: #0c1110;
@@ -206,19 +202,47 @@ main {
 .horarios tr:hover {
     background-color: #f0eaa3;
 }
-.imagen {
-  width: 100%;
-  max-width: px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 16px; /* Bordes redondeados prolijos */
-  align-self: flex-start; /* Centrar la imagen horizontalmente */
+
+#carouselVeterinaria {
+    width: 100%;
+    /* height: 300px; */
+    object-fit: contain;
+    border-radius: 15px;
 }
 
+.imagen-carousel {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
 
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@keyframes correr {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@media (min-width: 481px) {
+    /* modificaciones para tablet */
+
+    header {
+        justify-content: center;
+    }
+
+    .logo {
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) {
+
+    /* modificaciones para PC */
+    .horarios {
+        width: 100%;
+        padding: 3rem;
+    }
 }

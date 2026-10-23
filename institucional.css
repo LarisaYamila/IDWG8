@@ -1,15 +1,15 @@
-@import url("estilos.css");
-
+@import url("css/inicio.css");
 
 #profesionales {
-    display: flex;
+    display: flex; 
+    flex-direction: column;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
     gap: 30px;
 }
 
 #profesionales article {
-    width: 250px;
+    width: 350px;
     padding: 20px;
     text-align: center;
     border: 1px solid #ccc;
@@ -31,4 +31,26 @@
 .matricula {
   color: #59be23;
   font-weight: 500;
+}
+
+@media (min-width: 481px) {
+    /* modificaciones para tablet */
+
+    header {
+        justify-content: center;
+    }
+
+    .logo {
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) {
+    /* modificaciones para PC */
+    
+    #profesionales {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
 }
