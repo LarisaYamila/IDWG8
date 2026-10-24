@@ -232,6 +232,11 @@ footer {
     color: #075d54;
 }
 
+.imagen-carousel {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
 
 @keyframes correr {
     from {
