@@ -12,8 +12,8 @@ const form = document.getElementById("form-veterinarios");
 let idVeterinarioEditar;
 
 function eliminarVeterinario(idVeterinario) {
-    const indice = veterinarios.findIndex((veterinario)=> veterinario.idVeterinario === idVeterinario);
-    veterinarios.splice(indice,1);
+    const indice = veterinarios.findIndex((veterinario) => veterinario.idVeterinario === idVeterinario);
+    veterinarios.splice(indice, 1);
     guardarEnLocalStorage();
     mostrar();
 }
@@ -40,33 +40,22 @@ window.editarVeterinario = editarVeterinario;
 
 
 
-function mostrar () {
-    listadoVeterinarios.innerHTML = ''; 
+function mostrar() {
+    listadoVeterinarios.innerHTML = '';
 
-    veterinarios.forEach( (veterinario) => {
+    veterinarios.forEach((veterinario) => {
         listadoVeterinarios.innerHTML += `
             <tr>
                 <td>${veterinario.idVeterinario.slice(0, 5)}</td>
                 <td>${veterinario.matricula}</td>
                 <td>${veterinario.nombre}</td>
                 <td>${veterinario.especializacion}</td>
-                <td>${veterinario. valorConsulta}</td>
-                <td>
-                    <button class="btn btn-danger btn-sm" onclick="eliminarVeterinario('${veterinario.idVeterinario}')">
-                          Eliminar
-
-                    </button>
-                   
-                    <button class="btn btn-warning btn-sm" onclick="editarVeterinario('${veterinario.idVeterinario}')">
-
-                          Editar
-
-                    </button>
-
-                </td>
+                <td>${veterinario.valorConsulta}</td>
                 
+                <td><button class="btn-outline theme-secondary btn-icon" onclick="editarVeterinario('${veterinario.idVeterinario}')"><i class="bi bi-pencil-square"></i></button>
 
-
+                <button class="btn-subtle theme-warning btn-icon"  onclick="eliminarVeterinario('${veterinario.idVeterinario}')"><i class="bi bi-trash"></i></button></td>
+                
             </tr>
         `
     })
@@ -90,15 +79,15 @@ form.addEventListener('submit', (evento) => {
     const matricula = datos.get('matricula');
     const nombre = datos.get('nombre');
     const especializacion = datos.get('especializacion');
-    const  valorConsulta = datos.get('valorConsulta');
+    const valorConsulta = datos.get('valorConsulta');
 
     const nuevoVeterinario = {
         idVeterinario: crypto.randomUUID(),
         matricula: parseInt(datos.get('matricula')),
         nombre: datos.get('nombre').trim(),
         especializacion: datos.get('especializacion').trim(),
-         valorConsulta: parseFloat(datos.get('valorConsulta'))
-        
+        valorConsulta: parseFloat(datos.get('valorConsulta'))
+
     }
 
     veterinarios.push(nuevoVeterinario);
