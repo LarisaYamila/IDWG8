@@ -1,5 +1,6 @@
-@import url("reset.css");
-@import url("node_modules/bootstrap/dist/css/bootstrap.min.css");
+@import "../reset.css";
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
 
 @font-face {
     font-family: "Montserrat";
@@ -53,7 +54,8 @@ header {
 }
 
 main {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1320px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -77,11 +79,6 @@ a {
     border-radius: 10px;
 }
 
-#hero a:hover {
-    background-color: #c3b6b6;
-    color: #075d54;
-}
-
 #hero h2 {
     margin-bottom: 1rem;
     color: #073e3e;
@@ -99,6 +96,11 @@ a {
     color: #caeae7;
     border-radius: 10px;
     margin-bottom: 1rem;
+}
+
+#hero a:hover {
+    background-color: #c3b6b6;
+    color: #075d54;
 }
 
 .oferta {
@@ -208,6 +210,26 @@ footer {
     /* height: 300px; */
     object-fit: contain;
     border-radius: 15px;
+}
+
+.imagen-carousel {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.badge-mascotas {
+    background-color: #478776;
+}
+
+.btn-formulario {
+    background-color: #0f5742;
+    color: #caeae7;
+}
+
+#hero a:hover {
+    background-color: #c3b6b6;
+    color: #075d54;
 }
 
 .imagen-carousel {
