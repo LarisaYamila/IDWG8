@@ -37,7 +37,7 @@ let listaDeVeterinarios = [
 function cargarListaDeVeterinarios() {
   const listaVeterinariosLocalStorage = JSON.parse(localStorage.getItem(CLAVE_VETERINARIOS))
 
-  if (listaVeterinariosLocalStorage !== undefined)
+  if (listaVeterinariosLocalStorage !== null)
     listaDeVeterinarios = [...listaDeVeterinarios, ...listaVeterinariosLocalStorage]
 }
 
@@ -49,24 +49,52 @@ function crearProfesionalHTML(
   valorConsulta = 9999.99,
   imagenPerfil = ''
 ) {
-  if (idVeterinario.length == 0) 
-    return
+  if (idVeterinario.length === 0) return;
 
-  if (imagenPerfil.length == 0) 
+  if (imagenPerfil.length === 0) {
     imagenPerfil = `${URL_API_INICIALES_SVG}?seed=${encodeURIComponent(nombre)}`;
-  
+  }
+
+  const precioFormateado = Number(valorConsulta).toLocaleString('es-AR');
+
   return `
-            <article id=${idVeterinario}>
-                <img src="${imagenPerfil}" alt="Foto de ${nombre}">
-                <h3>${nombre}</h3>
-                <p>${especializacion.trim().toUpperCase()} - <span class="matricula">MAT ${matricula}</span></p>
-                <p class="valor">Valor Consulta: <span>$${valorConsulta}</span></p>
-            </article>
-          `
+    <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+      <article id="${idVeterinario}" class="card h-100 border-0 shadow-sm text-center">
+        <div class="card-body p-4 d-flex flex-column">
+          <img 
+            src="${imagenPerfil}" 
+            alt="Foto de ${nombre}" 
+            class="rounded-circle mx-auto mb-3 object-fit-cover"
+            style="width: 110px; height: 110px;"
+          >
+
+          <h3 class="h5 card-title fw-semibold mb-2 text-dark">
+            ${nombre}
+          </h3>
+
+          <p class="text-uppercase small text-secondary mb-1">
+            ${especializacion.trim()}
+          </p>
+
+          <p class="mb-3">
+            <span class="badge bg-success-subtle text-success fw-medium">
+              MAT ${matricula}
+            </span>
+          </p>
+
+          <div class="mt-auto border-top pt-3">
+            <span class="text-secondary small d-block">Valor Consulta</span>
+            <span class="fw-bold fs-5 text-dark">$${precioFormateado}</span>
+          </div>
+
+        </div>
+      </article>
+    </div>
+  `;
 }
 
 function renderListaDeVeterinarios() {
-  listaDeVeterinarios.forEach( veterinario => {
+  listaDeVeterinarios.forEach(veterinario => {
     divProfesionalesHTML.innerHTML += crearProfesionalHTML(
       veterinario.idVeterinario,
       veterinario.matricula,
