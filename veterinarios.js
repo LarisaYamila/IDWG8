@@ -1,3 +1,6 @@
+if (!estaLogueado()) {
+    window.location.href = 'login.html'
+}
 
 const veterinarios = JSON.parse(localStorage.getItem('veterinarios')) || [];
 
