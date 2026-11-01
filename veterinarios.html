@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veterinaria La Mary</title>
     <link rel="stylesheet" href="css/inicio.css">
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>  
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="./veterinarios.js"></script>
 
 </head>
@@ -16,7 +16,7 @@
     <!-- Componente de bootstrap -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            
+
             <a class="navbar-brand" href="index.html">🐾 La Mary</a>
 
             <!-- Botón hamburguesa -->
@@ -45,15 +45,15 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="pacientes.html">Pacientes</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="veterinarios.html">Veterinarios</a>
+                        <a class="nav-link" href="panelAdmin.html">Panel</a>
                     </li>
 
                 </ul>
-
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <button class="btn btn-formulario" type="button" onclick="cerrarSesion()">Cerrar sesión</button>
+                    </li>
+                </ul>
             </div>
 
         </div>
@@ -77,13 +77,13 @@
 
                 <article class="col-12 col-lg-7">
                     <span class="badge rounded-pill text-bg-success fw-semibold"> VETERINARIOS </span>
-                    <h2 class="fs-1 fw-semibold mt-2"> 
+                    <h2 class="fs-1 fw-semibold mt-2">
                         Profesionales registrados
                         <span class="badge text-bg-secondary align-middlex fs-5" id="total">0</span>
                     </h2>
 
 
-                    <div class ="table-responsive -md">
+                    <div class="table-responsive -md">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -104,48 +104,52 @@
                     </div>
 
                     <ul class="list-group mt-3" id="lista-veterinarios"></ul>
-                    
 
-               
-               
-                    
+
+
+
+
                 </article>
 
-                
+
                 <article class="col-12 col-lg-5">
 
                     <form class="d-flex flex-column gap-3 p-4 bg-body-tertiary rounded-4" id="form-veterinarios">
                         <h3 class="fs-4">Registrar Veterinario</h3>
 
                         <div>
-                            <label for="matricula" class="form-label">Matrícula</label> <!--Ver como hacer unica la matricula-->
+                            <label for="matricula" class="form-label">Matrícula</label>
+                            <!--Ver como hacer unica la matricula-->
                             <input type="number" name="matricula" id="matricula" class="form-control" min="0" required>
-                        </div> 
+                        </div>
 
                         <div>
                             <label for="nombre" class="form-label">Nombre</label>
                             <input type="text" name="nombre" id="nombre" class="form-control" required>
-                        </div>   
+                        </div>
 
                         <div>
-                            <label for="especializacion" class="form-label">Especialización</label> <!--Lista desplegable de especializaciones-->
+                            <label for="especializacion" class="form-label">Especialización</label>
+                            <!--Lista desplegable de especializaciones-->
                             <select name="especializacion" id="especializacion" class="form-select" required>
 
                                 <option value="Cirugía Veterinaria">Cirugía Veterinaria</option>
                                 <option value="Medicina de Grandes Animales">Medicina de Grandes Animales</option>
                                 <option value="Medicina de Pequeños Animales">Medicina de Pequeños Animales</option>
-                           
+
                             </select>
-                        </div>    
+                        </div>
 
 
-                         <div>
+                        <div>
                             <label for="valorConsulta" class="form-label">Valor de Consulta</label>
-                            <input type="number" name="valorConsulta" id="valorConsulta" min="0" step="0.01" class="form-control" required>
-                        </div> 
+                            <input type="number" name="valorConsulta" id="valorConsulta" min="0" step="0.01"
+                                class="form-control" required>
+                        </div>
 
-                        <button id="botonagregarveterinario" class=" btn btn-success" type="submit">Registrar Veterinario</button>
-                        
+                        <button id="botonagregarveterinario" class=" btn btn-success" type="submit">Registrar
+                            Veterinario</button>
+
 
                     </form>
 
@@ -179,7 +183,7 @@
     </footer>
     <div class="modal fade" id="modal-editar" tabindex="-1">
         <div class="modal-dialog">
-            <div class="modal-content"> 
+            <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Modificar datos de Veterinario </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -189,9 +193,10 @@
 
                         <div>
                             <label for="editar-matricula" class="form-label">Matrícula</label>
-                            <input type="number" name="editar-matricula" id="editar-matricula" class="form-control" required>
+                            <input type="number" name="editar-matricula" id="editar-matricula" class="form-control"
+                                required>
                         </div>
-                        
+
                         <div>
                             <label for="editar-nombre" class="form-label">Nombre</label>
                             <input type="text" name="editar-nombre" id="editar-nombre" class="form-control" required>
@@ -199,7 +204,8 @@
 
                         <div>
                             <label for="editar-especializacion" class="form-label">Especialización</label>
-                            <select name="editar-especializacion" id="editar-especializacion" class="form-select" required>
+                            <select name="editar-especializacion" id="editar-especializacion" class="form-select"
+                                required>
                                 <option value="Cirugía Veterinaria">Cirugía Veterinaria</option>
                                 <option value="Medicina de Grandes Animales">Medicina de Grandes Animales</option>
                                 <option value="Medicina de Pequeños Animales">Medicina de Pequeños Animales</option>
@@ -209,7 +215,8 @@
 
                         <div>
                             <label for="editar-valorConsulta" class="form-label">Valor de Consulta</label>
-                            <input type="number" name="editar-valorConsulta" id="editar-valorConsulta" min="0" step="0.01" class="form-control" required>
+                            <input type="number" name="editar-valorConsulta" id="editar-valorConsulta" min="0"
+                                step="0.01" class="form-control" required>
                         </div>
 
 
@@ -219,15 +226,15 @@
                         <button type="submit" class="btn btn-primary">Guardar cambios</button>
                     </div>
                 </form>"
-                </div>"
             </div>"
-        </div>
+        </div>"
     </div>
-      
+    </div>
+
 
     </div>
-  </div>
-</div>
+    </div>
+    </div>
 
 
 

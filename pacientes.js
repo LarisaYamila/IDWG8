@@ -1,3 +1,7 @@
+if (!estaLogueado()) {
+    window.location.href = 'login.html'
+}
+
 //Constantes
 const CLAVE_ANIMALES = 'animales'
 const ID_LISTADO_ANIMALES = 'listado-animales'
