@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="institucional.css">
+  <title>Veterinaria La Mary - Institucional</title>
+
+</head>
+
+<body>
+  <!-- Componente de boostrap -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="index.html">🐾 La Mary</a>
+
+      <!-- Botón hamburguesa -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="institucional.html">Institucional</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item" id="link-login">
+            <a class="nav-link active" href="./login.html">Iniciar Sesión</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <header>
+
+    <div class="logo">
+      <h1>Veterinaria La Mary</h1>
+      <p>Especialistas en su bienestar y felicidad.</p>
+    </div>
+
+  </header>
+
+  <main>
+    <section class="container py-2">
+      <div class="row g-4 justify-content-center align-items-center">
+
+        <article class="col-12 col-md-8 col-lg-6 bg-body-secondary rounded-4 p-4 mb-2">
+
+          <form class="d-flex flex-column gap-3 p-4 bg-body-tertiary rounded-4" id="form-sesion">
+            <h3 class="fs-4">Iniciar Sesión</h3>
+
+            <div>
+              <label for="nombreUsuario" class="form-label">Nombre de Usuario</label>
+              <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" required>
+            </div>
+
+            <div>
+              <label for="contrasenia" class="form-label">Contraseña</label>
+              <input type="password" name="contrasenia" id="contrasenia" class="form-control" required>
+            </div>
+
+            <span id="mensajeError" class="text-danger"></span>
+
+            <button id="botonIniciarSesion" class="btn btn-formulario" type="submit">Iniciar Sesión</button>
+          </form>
+
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+
+  <footer>
+    <p>Veterinaria La Mary - Av. San Martín 1247, Concordia, Entre Rios</p>
+    <p> Trabajo Final Integrador - Introducción al Desarrollo Web 2026</p>
+  </footer>
+
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer src="./sesion.js"></script>
+  <script defer src="./login.js"></script>
+</body>
+
+</html>

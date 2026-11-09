@@ -1,4 +1,4 @@
-@import url("css/inicio.css");
+@import "./css/inicio.css";
 
 #profesionales {
     display: flex; 
@@ -9,7 +9,7 @@
 }
 
 #profesionales article {
-    width: 350px;
+    width: 280px;
     padding: 20px;
     text-align: center;
     border: 1px solid #ccc;
