@@ -1,0 +1,353 @@
+@import "../reset.css";
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("./../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+
+    background-color: whitesmoke;
+    font-family: "Montserrat", sans-serif;
+}
+
+/*estilo header*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1b4332;
+    padding: 1rem 3rem;
+    color: #f4f8f6;
+}
+
+.logo h1 {
+    margin-bottom: 0.5rem;
+}
+
+.logo p {
+    margin-bottom: 1rem;
+}
+
+.menu {
+    width: fit-content;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.menu a:hover {
+    color: #46978f;
+}
+
+main {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+}
+
+/*reglas para los links*/
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#hero {
+    flex: 0 0 50%;
+    /* background-color: #ecffee; */
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#hero h2 {
+    margin-bottom: 1rem;
+    color: #073e3e;
+}
+
+#hero p {
+    margin-bottom: 1rem;
+    color: #003624;
+}
+
+#hero a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #0f5742;
+    color: #caeae7;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+#hero a:hover {
+    background-color: #c3b6b6;
+    color: #075d54;
+}
+
+.oferta {
+    width: 100%;
+    overflow: hidden;
+    color: rgb(0, 0, 0);
+    white-space: nowrap;
+}
+
+.oferta {
+    display: inline-block;
+    white-space: nowrap;
+    animation: correr 10s linear infinite;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+
+/*--------------------------------------------------------------------------*/
+.titulo-servicios h2 {
+    font-size: 32px;
+    color: #073e3e;
+    margin-bottom: 12px;
+}
+
+.linea-decorativa {
+    width: 65px;
+    height: 4px;
+    background-color: #478776;
+    margin: 0 auto 15px;
+    border-radius: 10px;
+}
+
+.titulo-servicios p {
+    font-size: 17px;
+    color: #555;
+}
+
+
+/*--------------------------------------------------------------------------*/
+.flip-card {
+  width: 100%;
+  height: 230px;
+  perspective: 1000px;
+  position: relative;
+  cursor: pointer;
+}
+
+/*Estructura interna*/
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+}
+
+/* Efecto giro */
+.flip-card:hover .flip-card-inner,
+.flip-card:focus .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Frente y reverso */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 25px;
+  border-radius: 20px;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Frente */
+.flip-card-front {
+  background-color: #09412f;
+  color: white;
+}
+
+/* Reverso */
+.flip-card-back {
+  background-color: #02a375;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Textos */
+.flip-card h3 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.flip-card p {
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 0;
+}
+.flip-card-front {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Tamaño de los íconos */
+.flip-card-front i {
+    font-size: 45px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+/* animación */
+.flip-card:hover .flip-card-front i {
+    transform: scale(1.15);
+}
+
+
+
+
+footer {
+    background-color: #4a937e;
+    color: #ebf7f6;
+    text-align: center;
+    padding: 1rem;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.horarios {
+    background-color: #075d46;
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.horarios h2 {
+    margin-bottom: 1rem;
+    color: #c3d8d2;
+    text-align: center;
+}
+
+.horarios table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.horarios th,
+.horarios td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #caeae7;
+    color: #0c1110;
+    font-size: 0.95rem;
+}
+
+.horarios th {
+    background-color: #0f5742;
+    color: #e9e7e7;
+}
+
+.horarios tr:hover {
+    background-color: #c9d3d0;
+}
+
+#carouselVeterinaria {
+    width: 100%;
+    /* height: 300px; */
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.imagen-carousel {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.badge-mascotas {
+    background-color: #478776;
+}
+
+.btn-formulario {
+    background-color: #0f5742;
+    color: #caeae7;
+}
+
+#hero a:hover {
+    background-color: #c3b6b6;
+    color: #075d54;
+}
+
+.imagen-carousel {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+@keyframes correr {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@media (min-width: 481px) {
+    /* modificaciones para tablet */
+
+    header {
+        justify-content: center;
+    }
+
+    .logo {
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) {
+
+    /* modificaciones para PC */
+    .horarios {
+        width: 100%;
+        padding: 3rem;
+    }
+}

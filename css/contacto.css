@@ -1,0 +1,48 @@
+@import "./inicio.css";
+
+form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 350px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 481px) {
+    /* modificaciones para tablet */
+
+    header {
+        justify-content: center;
+    }
+
+    .logo {
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) {
+    
+    form {
+        width: 500px;
+    }
+}
