@@ -124,38 +124,121 @@ h3 {
     font-size: 1.3rem;
 }
 
-.servicios {
-    background-color: #225550;
-    padding: 2rem;
-    margin: 1rem 0;
-    text-align: center;
-    border-radius: 10px;
-    width: 100%;
+
+/*--------------------------------------------------------------------------*/
+.titulo-servicios h2 {
+    font-size: 32px;
+    color: #073e3e;
+    margin-bottom: 12px;
 }
 
-.servicios h2 {
-    margin-bottom: 1rem;
-    color: #edf2f1;
-}
-
-.servicios div {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.card {
+.linea-decorativa {
+    width: 65px;
+    height: 4px;
     background-color: #478776;
-    color: #ebe9e9;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 20px;
-    width: 300px;
+    margin: 0 auto 15px;
+    border-radius: 10px;
 }
+
+.titulo-servicios p {
+    font-size: 17px;
+    color: #555;
+}
+
+
+/*--------------------------------------------------------------------------*/
+.flip-card {
+  width: 100%;
+  height: 230px;
+  perspective: 1000px;
+  position: relative;
+  cursor: pointer;
+}
+
+/*Estructura interna*/
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+}
+
+/* Efecto giro */
+.flip-card:hover .flip-card-inner,
+.flip-card:focus .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Frente y reverso */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 25px;
+  border-radius: 20px;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Frente */
+.flip-card-front {
+  background-color: #09412f;
+  color: white;
+}
+
+/* Reverso */
+.flip-card-back {
+  background-color: #02a375;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Textos */
+.flip-card h3 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.flip-card p {
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 0;
+}
+.flip-card-front {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Tamaño de los íconos */
+.flip-card-front i {
+    font-size: 45px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+/* animación */
+.flip-card:hover .flip-card-front i {
+    transform: scale(1.15);
+}
+
+
+
 
 footer {
-    background-color: #0f5742;
-    color: #caeae7;
+    background-color: #4a937e;
+    color: #ebf7f6;
     text-align: center;
     padding: 1rem;
 }
@@ -167,7 +250,7 @@ footer {
 }
 
 .horarios {
-    background-color: #478776;
+    background-color: #075d46;
     padding: 2rem;
     margin: 1rem 0;
     border-radius: 10px;
@@ -176,7 +259,7 @@ footer {
 
 .horarios h2 {
     margin-bottom: 1rem;
-    color: #00251b;
+    color: #c3d8d2;
     text-align: center;
 }
 
@@ -202,7 +285,7 @@ footer {
 }
 
 .horarios tr:hover {
-    background-color: #f0eaa3;
+    background-color: #c9d3d0;
 }
 
 #carouselVeterinaria {
