@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnos - Veterinaria La Mary</title>
+    <link rel="stylesheet" href="css/inicio.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="./sesion.js"></script>
+    <script type="module" src="./historiaclinica.js"></script>
+</head>
+
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="index.html">🐾 La Mary</a>
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú de navegación -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="institucional.html">Institucional</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="panelAdmin.html">Panel</a>
+                    </li>
+                    
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <button class="btn btn-formulario" type="button" onclick="cerrarSesion()">Cerrar sesión</button>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <h1>Veterinaria La Mary</h1>
+            <p>Especialistas en su bienestar y felicidad.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="container py-5">
+            <div class="row g-4">
+
+                <!-- Listado de historias clínicas -->
+                <article class="col-12 col-lg-7">
+
+                    <span class="badge rounded-pill text-bg-success fw-semibold">
+                        HISTORIAS CLÍNICAS
+                    </span>
+
+                    <h2 class="fs-1 fw-semibold mt-2">
+                        Historias clínicas registradas
+                        <span class="badge text-bg-secondary fs-5" id="total">0</span>
+                    </h2>
+
+                    <div class="mb-3">
+                        <label for="filtro-mascota" class="form-label">
+                            Ver historial de una mascota específica:
+                        </label>
+
+                        <select id="filtro-mascota" class="form-select">
+                            <option value="">Todas las mascotas</option>
+                        </select>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+
+                            <thead>
+                                <tr>
+                                    <th scope="col">Mascota</th>
+                                    <th scope="col">Dueño</th>
+                                    <th scope="col">Veterinario</th>
+                                    <th scope="col">Fecha y hora</th>
+                                    <th scope="col">Diagnóstico</th>
+                                    <th scope="col">Tratamiento</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tabla-historias">
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </article>
+
+                <!-- Formulario para registrar historias clínicas -->
+                <article class="col-12 col-lg-5">
+
+                    <form id="form-historias"
+                        class="d-flex flex-column gap-3 p-4 bg-body-tertiary rounded-4">
+
+                        <h3 class="fs-4">Registrar Historia Clínica</h3>
+
+                        <div>
+                            <label for="mascota" class="form-label">
+                                Mascota
+                            </label>
+
+                            <select id="mascota" name="mascota"
+                                class="form-select" required>
+
+                                <option value="">Seleccionar mascota</option>
+
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="veterinario" class="form-label">
+                                Veterinario
+                            </label>
+
+                            <select id="veterinario" name="veterinario"
+                                class="form-select" required>
+
+                                <option value="">Seleccionar veterinario</option>
+
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="fechaHora" class="form-label">
+                                Fecha y hora del turno
+                            </label>
+
+                            <input type="datetime-local"
+                                id="fechaHora"
+                                name="fechaHora"
+                                class="form-control"
+                                required>
+                        </div>
+
+                        <div>
+                            <label for="diagnostico" class="form-label">
+                                Diagnóstico
+                            </label>
+
+                            <textarea id="diagnostico" name="diagnostico"
+                                class="form-control" rows="3"
+                                required></textarea>
+                        </div>
+
+                        <div>
+                            <label for="tratamiento" class="form-label">
+                                Tratamiento
+                            </label>
+
+                            <textarea id="tratamiento" name="tratamiento"
+                                class="form-control" rows="3"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">
+                            Registrar Historia Clínica
+                        </button>
+
+                    </form>
+
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+
+        <p class="fs-6">
+            Veterinaria La Mary - Av. San Martín 1247,
+            Concordia, Entre Ríos
+        </p>
+
+        <p class="fs-6">
+            Trabajo Final Integrador -
+            Introducción al Desarrollo Web 2026
+        </p>
+
+    </footer>
+
+</body>
+</html>

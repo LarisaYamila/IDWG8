@@ -38,17 +38,17 @@
           <li class="nav-item">
             <a class="nav-link" href="contacto.html">Contacto</a>
           </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" href="pacientes.html">Pacientes</a>
-          </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="veterinarios.html">Veterinarios</a>
+            <a class="nav-link" href="panelAdmin.html">Panel</a>
           </li>
 
         </ul>
-
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <button class="btn btn-formulario" type="button" onclick="cerrarSesion()">Cerrar sesión</button>
+          </li>
+        </ul>
       </div>
 
     </div>
@@ -67,7 +67,7 @@
     <section class="container py-2">
       <article class="col-12 bg-body-secondary rounded-4 p-4 mb-2">
         <form class="d-flex flex-column gap-3" id="form-animales">
-          <h3 class="fs-4 fw-semibold">NUEVO INGRESO</h3>
+          <h3 class="fs-4 fw-semibold">PACIENTES - NUEVO INGRESO</h3>
           <div class="row g-3">
             <div class="col-md-6">
               <label for="nombreDuenio" class="form-label">Dueño</label>
@@ -299,7 +299,8 @@
   </footer>
 
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./pacientes.js" defer></script>
+  <script defer src="./sesion.js"></script>
+  <script defer src="./pacientes.js"></script>
 </body>
 
 </html>

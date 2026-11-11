@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="institucional.css">
 
-
     <title>Veterinaria La Mary - Institucional</title>
+    
+    <script defer src="./sesion.js"></script>
+    <script defer src="./header.js"></script>
 </head>
 
 <body>
@@ -31,27 +33,22 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Inicio</a>
+                        <a class="nav-link" href="index.html">Inicio</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="institucional.html">Institucional</a>
+                        <a class="nav-link active" href="institucional.html">Institucional</a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="pacientes.html">Pacientes</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="veterinarios.html">Veterinarios</a>
-                    </li>
-
                 </ul>
-
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item" id="link-login">
+                        <a class="nav-link" href="./login.html">Iniciar Sesión</a>
+                    </li>
+                </ul>
             </div>
 
         </div>
@@ -67,39 +64,13 @@
     </header>
 
     <main>
-        <!--
-                Contenido
-            -->
-
         <section class="py-5">
-            <h2 class="text-center"> Nuestros Profesionales</h2>
-
-            <div id="profesionales">
-                <article>
-                    <img src="images/jose-rivadavia.jpg" alt="Foto José Rivadavia">
-                    <h3>José Rivadavia</h3>
-                    <p>CIRUGIA VETERINARIA - <span class="matricula">MAT 5576</span></p>
-                    <p class="valor">Valor Consulta: <span>$75000</span></p>
-
-                </article>
-
-                <article>
-                    <img src="images/pia-grancetti.jpg" alt="Foto Pia Grancetti">
-                    <h3>Pia Grancetti</h3>
-                    <p>MEDICINA DE GRANDES ANIMALES - <span class="matricula">MAT 1114</span></p>
-                    <p class="valor">Valor Consulta: <span>$50000</span></p>
-                </article>
-
-                <article>
-                    <img src="images/felipe-atoniutti.jpg" alt="Foto Felipe Antoniutti">
-                    <h3>Felipe Antoniutti</h3>
-                    <p>MEDICINA DE PEQUEÑOS ANIMALES - <span class="matricula">MAT 1530</span></p>
-                    <p class="valor">Valor Consulta: <span>$30000</span></p>
-                </article>
+            <div class="container">
+                <h2 class="text-center mb-5">Nuestros Profesionales</h2>
+                <div id="profesionales" class="row g-4 justify-content-center">
+                </div>
             </div>
-
         </section>
-
     </main>
 
     <footer>
@@ -108,6 +79,7 @@
     </footer>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./institucional.js" defer></script>
 </body>
 
 </html>
