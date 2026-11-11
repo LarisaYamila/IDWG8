@@ -12,7 +12,16 @@ const form = document.getElementById("form-veterinarios");
 
 //const btnEditar = new bootstrap.Modal(document.getElementById('modal-editar'));
 
+const ID_BOTON_CONFIRMAR_ELIMINAR = 'btnConfirmarEliminar'
+const ID_DIALOG_ELIMINAR_VETERINARIO = 'dialogEliminarVeterinario'
+const dialogEliminarVeterinarioHTML = document.getElementById(ID_DIALOG_ELIMINAR_VETERINARIO);
+const botonConfirmarEliminarHTML = document.getElementById(ID_BOTON_CONFIRMAR_ELIMINAR);
+
+
 let idVeterinarioEditar;
+let idVeterinarioEliminar = null;
+
+const asignarIDVeterinarioEliminar = (idVeterinario) => { idVeterinarioEliminar = idVeterinario }
 
 function eliminarVeterinario(idVeterinario) {
     const indice = veterinarios.findIndex((veterinario) => veterinario.idVeterinario === idVeterinario);
@@ -41,8 +50,6 @@ window.editarVeterinario = editarVeterinario;
 
 
 
-
-
 function mostrar() {
     listadoVeterinarios.innerHTML = '';
 
@@ -55,10 +62,11 @@ function mostrar() {
                 <td>${veterinario.especializacion}</td>
                 <td>${veterinario.valorConsulta}</td>
                 
-                <td><button class="btn-outline theme-secondary btn-icon" onclick="editarVeterinario('${veterinario.idVeterinario}')"><i class="bi bi-pencil-square"></i></button>
 
-                <button class="btn-subtle theme-warning btn-icon"  onclick="eliminarVeterinario('${veterinario.idVeterinario}')"><i class="bi bi-trash"></i></button></td>
-                
+                <td>
+                <button class="btn-outline theme-secondary btn-icon" onclick="editarVeterinario('${veterinario.idVeterinario}')"><i class="bi bi-pencil-square"></i></button>
+                <button commandfor="dialogEliminarVeterinario" command="show-modal" class="btn-subtle theme-warning btn-icon" onclick="${asignarIDVeterinarioEliminar(veterinario.idVeterinario)}"><i class="bi bi-trash"></i></button>
+                </td>
             </tr>
         `
     })
@@ -124,3 +132,17 @@ formEditar.addEventListener("submit", (evento) => {
     bootstrap.Modal.getInstance(document.getElementById("modal-editar")).hide();
 
 })
+
+botonConfirmarEliminarHTML.addEventListener("click", () => {
+    if (idVeterinarioEliminar == null) {
+        //cerrar dialog eliminar veterinario
+        dialogEliminarVeterinarioHTML.close()
+        return
+    }
+
+    eliminarVeterinario(idVeterinarioEliminar);
+    asignarIDAnimalEliminar(null);
+
+    //cerrar dialog eliminar animal
+    dialogEliminarVeterinarioHTML.close()
+});
